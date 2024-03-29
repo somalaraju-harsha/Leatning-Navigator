@@ -1,6 +1,7 @@
 package com.crio.learningnavigator.model;
 
 import java.util.List;
+import java.util.Set;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
@@ -28,15 +29,11 @@ public class Student {
     // @Column(name="name")
     private String studentName;
 
-    // @OneToMany(cascade = CascadeType.ALL)
-    // @JoinColumn(name = "std_id",referencedColumnName = "id")
     @OneToMany
     @JoinColumn(name = "fk_student_id",referencedColumnName = "id")
-    private List<Subject> subjectList;
+    private Set<Subject> subjectList;
 
-    // @OneToMany(cascade = CascadeType.ALL)
-    // @JoinColumn(name = "std_id",referencedColumnName = "id")
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "fk_student_id",referencedColumnName = "id")
-    private List<Exam> examList;
+    private Set<Exam> examList;
 }
