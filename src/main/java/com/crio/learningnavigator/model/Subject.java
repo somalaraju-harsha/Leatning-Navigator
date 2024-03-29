@@ -1,12 +1,13 @@
 package com.crio.learningnavigator.model;
 
-import java.util.List;
+import java.util.Set;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -27,5 +28,5 @@ public class Subject {
 
     @OneToMany
     @JoinColumn(name = "fk_subject_id",referencedColumnName = "id")
-    private List<Student> studentsList;
+    private Set<Student> studentsList;
 }
